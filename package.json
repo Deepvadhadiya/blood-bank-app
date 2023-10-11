@@ -1,7 +1,7 @@
 {
-  "name": "blood-bank-app",
+  "name": "blood-bank-system",
   "version": "1.0.0",
-  "description": "Blood Bank App",
+  "description": "blood-bank-system",
   "main": "server.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,13 +22,10 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "jwt-encode": "^1.0.1",
-    "mongoose": "^7.5.3",
+    "mongoose": "^7.6.0",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.5",
     "nodemon": "^3.0.1",
     "validator": "^13.11.0"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

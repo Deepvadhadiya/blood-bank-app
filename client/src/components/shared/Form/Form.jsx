@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import InputType from "./InputType.jsx";
+import React, { useState } from 'react';
+import InputType from './InputType.jsx';
 import { Link } from 'react-router-dom';
-import { handleLogin, handleRegister } from "../../../services/authService.jsx";
+import { handleLogin, handleRegister } from '../../../services/authService.jsx';
 
-const Form = ({ formType, submitBtn, formTitle }) => {
+const Form = ({ submitBtn, formTitle, formType }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('donar');
@@ -13,15 +13,15 @@ const Form = ({ formType, submitBtn, formTitle }) => {
     const [website, setWebsite] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
-
     return (
-        <div>
-            <form onSubmit={(e) => { 
+        <>
+            <form onSubmit={(e) => {
                 if (formType === 'login') return handleLogin(e, email, password, role);
                 else if (formType === 'register') return handleRegister(e, name, role, email, password, organisationName, hospitalName, website, address, phone);
             }}>
                 <h1 className="text-center">{formTitle}</h1>
                 <hr />
+
                 <div className="d-flex mb-3">
                     <div className="form-check">
                         <input
@@ -47,6 +47,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     </div>
 
                 </div>
+
                 {/* switch statement */}
                 {(() => {
                     // eslint-disable-next-line
@@ -97,6 +98,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                         }
                     }
                 })()}
+
                 <div className="d-flex align-items-center justify-content-evenly">
                     {formType === 'login' ? (<p className="m-0">Not Registerd yet <Link to="/register">Register Here</Link></p>) : (<p className="m-0">Already User Please <Link to="/login">Login here</Link></p>)}
                     <button className="btn btn-primary" type="submit">
@@ -104,7 +106,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     </button>
                 </div>
             </form>
-        </div>
+        </>
     )
 }
 

@@ -1,6 +1,7 @@
-import React from 'react'
-import Header from './Header.jsx'
-import SidebarMenu from './SidebarMenu.jsx'
+import React from 'react';
+import Header from './Header.jsx';
+import SidebarMenu from './SidebarMenu.jsx';
+
 
 const Layout = ({ children }) => {
     return (

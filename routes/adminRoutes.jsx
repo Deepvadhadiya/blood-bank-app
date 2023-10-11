@@ -1,7 +1,7 @@
 const express = require('express');
-const authMiddleware = require('../middlewares/authMiddleware.jsx');
-const { getDonarListController, getHospitalListController, getOrganisationListController, deleteDonarController } = require('../controllers/adminController.jsx');
-const adminMiddleware = require('../middlewares/adminMiddleware.jsx');
+const authMiddleware = require('../middlewares/authMiddlewares.jsx');
+const { getDonarListController, getHospitalListController, getOrganisationListController, deleteDonarController } = require('../controllers/adminContollers.jsx');
+const adminMiddleware = require('../middlewares/adminMiddlewares.jsx');
 
 const router = express.Router();
 

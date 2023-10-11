@@ -1,28 +1,29 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage.jsx';
-import Login from './pages/auth/Login.jsx';
-import Register from './pages/auth/Register.jsx';
+import Login from './pages/Auth/Login.jsx';
+import Register from './pages/Auth/Register.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProtectedRoute from './components/Routes/ProtectedRoute.jsx';
 import PublicRoute from './components/Routes/PublicRoute.jsx';
-import Donar from './pages/Dashboard/Donar.jsx';
-import Hospital from './pages/Dashboard/Hospital.jsx';
-import Organisation from './pages/Dashboard/Organisation.jsx';
-import Consumer from './pages/Dashboard/Consumer.jsx';
-import Donation from './pages/Donation.jsx';
-import Analytics from './pages/Dashboard/Analytics.jsx';
-import DonarList from './pages/Admin/DonarList.jsx';
-import HospitalList from './pages/Admin/HospitalList.jsx';
-import OrganisationList from './pages/Admin/OrganisationList.jsx';
-import AdminHome from './pages/Admin/AdminHome.jsx';
+import Verificationmsg from './pages/Auth/Verificationmsg.jsx';
 import DonarHome from './pages/DonarHome.jsx';
+import Analytics from './pages/Dashboard/Analytics';
+import AdminHome from './pages/Admin/AdminHome.jsx';
+import DonarList from './pages/Admin/DonarList';
+import HospitalList from './pages/Admin/HospitalList.jsx';
+import Consumer from './pages/Dashboard/Consumer.jsx';
+import Donar from './pages/Dashboard/Donar.jsx';
+import Organisation from './pages/Dashboard/Organisation.jsx';
+import Hospital from './pages/Dashboard/Hospital';
+import Donation from './pages/Donation';
 import HospitalHome from './pages/HospitalHome.jsx';
-import Authorization from './pages/auth/Authorization.jsx';
+import OrganisationList from './pages/Admin/OrganisationList.jsx';
 
 function App() {
   return (
-    <>
+    <div>
+
       <ToastContainer />
       <Routes>
         <Route
@@ -66,30 +67,6 @@ function App() {
           }
         />
         <Route
-          path='/admin'
-          element={
-            <ProtectedRoute>
-              <AdminHome />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/donar-home'
-          element={
-            <ProtectedRoute>
-              <DonarHome />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/hospital-home'
-          element={
-            <ProtectedRoute>
-              <HospitalHome />
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path='/organisation-list'
           element={
             <ProtectedRoute>
@@ -106,10 +83,26 @@ function App() {
           }
         />
         <Route
+          path='/hospital-home'
+          element={
+            <ProtectedRoute>
+              <HospitalHome />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path='/organisation'
           element={
             <ProtectedRoute>
               <Organisation />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/donation'
+          element={
+            <ProtectedRoute>
+              <Donation />
             </ProtectedRoute>
           }
         />
@@ -122,10 +115,18 @@ function App() {
           }
         />
         <Route
-          path='/donation'
+          path='/admin'
           element={
             <ProtectedRoute>
-              <Donation />
+              <AdminHome />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/donar-home'
+          element={
+            <ProtectedRoute>
+              <DonarHome />
             </ProtectedRoute>
           }
         />
@@ -141,7 +142,7 @@ function App() {
           path='/verify-email'
           element={
             <PublicRoute>
-              <Authorization />
+              <Verificationmsg />
             </PublicRoute>
           }
         />
@@ -154,7 +155,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </div>
   );
 }
 

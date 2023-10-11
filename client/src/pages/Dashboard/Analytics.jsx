@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import Header from '../../components/shared/Layout/Header.jsx'
-import API from './../../services/API.jsx';
+import React, { useEffect, useState } from 'react'
+import API from '../../services/API';
+import Header from '../../components/Shared/Layout/Header';
 import moment from 'moment';
 
 const Analytics = () => {

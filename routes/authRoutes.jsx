@@ -1,22 +1,17 @@
 const express = require('express');
-const { registerController, loginController, currentUserController, verifyController } = require('../controllers/authController.jsx');
-const authMiddleware = require('../middlewares/authMiddleware.jsx');
-
-//router object
-const router = express.Router();
+const { registerController, verifyEmailController, loginController, currentUserController } = require('../controllers/authControllers.jsx');
+const authMiddlewares = require('../middlewares/authMiddlewares.jsx');
+const router = express.Router()
 
 //routes
-//Register || post
-router.post('/register', registerController);
+router.post('/', registerController);
 
-// Verify || post
-router.post('/verify-email', verifyController)
+router.get('/verify/:id/:token', verifyEmailController);
 
 //Login || post
 router.post('/login', loginController);
 
 //get current user || get
-router.get('/current-user', authMiddleware, currentUserController)
+router.get('/current-user', authMiddlewares, currentUserController)
 
-//exports
 module.exports = router;

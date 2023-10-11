@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Layout from '../../components/shared/Layout/Layout.jsx';
-import API from '../../services/API.jsx';
 import moment from 'moment';
+import React, { useEffect, useState } from 'react'
+import Layout from '../../components/Shared/Layout/Layout';
+import API from '../../services/API';
 import { useSelector } from 'react-redux';
 
 const Consumer = () => {

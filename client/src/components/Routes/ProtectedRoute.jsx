@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import API from '../../services/API.jsx';
-import { getCurrentUser } from '../../redux/features/auth/authActions.jsx';
 import { Navigate } from 'react-router-dom';
+import { getCurrentUser } from '../../redux/features/authActions.jsx';
+import API from '../../services/API.jsx';
 
 const ProtectedRoute = ({ children }) => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ProtectedRoute = ({ children }) => {
         getUser();
     })
 
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('authtoken')) {
         return children
     } else {
         return <Navigate to="/login" />

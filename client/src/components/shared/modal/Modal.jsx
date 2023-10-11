@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import InputType from './../Form/InputType.jsx';
-import API from './../../../services/API.jsx';
+import React, { useState } from 'react'
+import InputType from '../Form/InputType';
+import API from '../../../services/API';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 const Modal = () => {
-
     const [inventoryType, setInventoryType] = useState("in");
     const [bloodGroup, setBloodGroup] = useState("");
     const [quantity, setQuantity] = useState(0);

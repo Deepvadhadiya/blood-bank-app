@@ -1,5 +1,6 @@
-import { userLogin, userRegister, verifyUser } from './../redux/features/auth/authActions.jsx';
-import store from './../redux/store';
+
+import { userLogin, userRegister } from '../redux/features/authActions.jsx';
+import store from './../redux/store.jsx';
 
 export const handleLogin = (e, email, password, role) => {
     e.preventDefault()
@@ -8,7 +9,6 @@ export const handleLogin = (e, email, password, role) => {
             return alert("Please Provide All Fields");
         }
         store.dispatch(userLogin({ email, password, role }));
-
     } catch (error) {
         console.log(error);
     }
@@ -22,23 +22,5 @@ export const handleRegister = (e, name, role, email, password, organisationName,
         console.log(error);
     }
 };
-
-export const handleVerifyUser = (e, email) => {
-    e.preventDefault();
-    try {
-        store.dispatch(verifyUser({ email }));
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-// export const handleVerifyUser = (e, email) => {
-//     e.preventDefault();
-//     try {
-//         store.dispatch(verifyUser({ email }));
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
 
 export const handleLogout = () => { };

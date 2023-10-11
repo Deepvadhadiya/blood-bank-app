@@ -31,7 +31,7 @@ const Header = () => {
                                 <p className="align-items-center d-flex m-0"><BiUserCircle className="mx-2" />Welcome {user?.name || user?.hospitalName || user?.organisationName} &nbsp;<span className="badge bg-secondary text-capitalize">{user?.role}</span></p>
                             </li>
                             {
-                                (location.pathname === "/"|| location.pathname === "/donar" || location.pathname === "/hospital") ? (
+                                (location.pathname === "/" || location.pathname === "/donar" || location.pathname === "/hospital") ? (
                                     <li className="nav-item mx-3">
                                         <Link to="/analytics" className="m-0 nav-item nav-link btn btn-primary">
                                             Analytics

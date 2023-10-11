@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-require("dotenv").config();
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     role: {
         type: String,
         required: [true, 'role is required'],
-        enum: ['admin', 'organisation', 'donar', 'hospital'],
+        enum: ['admin', 'donar', 'hospital', 'organisation']
     },
     name: {
         type: String,
@@ -43,14 +42,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'password is required'],
     },
-    // isVerified: {
-    //     type: Boolean,
-    //     default: false,
-    // },
-    // emailToken: {
-    //     type: String,
-    //     default: null,
-    // },
+    verified: {
+        type: Boolean,
+        default: false,
+    },
     website: {
         type: String,
     },
@@ -66,4 +61,6 @@ const userSchema = mongoose.Schema({
     { timestamps: true },
 )
 
-module.exports = mongoose.model('users', userSchema);
+
+
+module.exports = mongoose.model("users", userSchema);

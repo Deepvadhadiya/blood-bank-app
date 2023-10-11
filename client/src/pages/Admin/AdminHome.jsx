@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { useSelector } from 'react-redux';
-import Layout from '../../components/shared/Layout/Layout';
+import Layout from '../../components/Shared/Layout/Layout';
 
 const AdminHome = () => {
     const { user } = useSelector((state) => state.auth);

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
-import API from '../services/API';
 import moment from 'moment';
-import Layout from '../components/shared/Layout/Layout.jsx';
+import React, { useEffect, useState } from 'react'
+import Layout from '../components/Shared/Layout/Layout';
+import API from '../services/API';
+import { useSelector } from 'react-redux';
 
 const Donation = () => {
     const { user } = useSelector((state) => state.auth);

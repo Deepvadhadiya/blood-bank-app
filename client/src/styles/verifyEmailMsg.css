@@ -1,0 +1,11 @@
+/* ============================= */
+.container-tight {
+    --tblr-gutter-x: calc(var(--tblr-page-padding) * 2) !important;
+    --tblr-gutter-y: 0 !important;
+    width: 100% !important;
+    padding-right: calc(var(--tblr-gutter-x) * .5) !important;
+    padding-left: calc(var(--tblr-gutter-x) * .5) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    max-width: 30rem !important;
+  }

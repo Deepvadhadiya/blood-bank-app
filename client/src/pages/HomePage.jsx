@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import Spinner from '../components/shared/Spinner.jsx';
-import Layout from '../components/shared/Layout/Layout.jsx';
-import Modal from '../components/shared/modal/Modal.jsx';
+import Spinner from '../components/Shared/Spinner';
+import Layout from '../components/Shared/Layout/Layout.jsx'
+import Modal from '../components/Shared/modal/Modal.jsx';
 import API from '../services/API.jsx';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
   const { loading, error, user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   //get function
   const getBloodRecord = async () => {
     try {
@@ -35,7 +35,7 @@ const HomePage = () => {
       {
         user?.role === "donar" && navigate('/donar-home')
       }
-      
+
       {
         user?.role === "hospital" && navigate('/hospital-home')
       }
